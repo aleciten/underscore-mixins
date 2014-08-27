@@ -8,6 +8,15 @@
 				chunks.push(arr.slice(chunkIndex*chunkSize, (chunkIndex+1)*chunkSize));				
 			}
 			return chunks;
+		},
+
+		// Test if a wildcard pattern matches a given string
+		matchesWildcard: function(testString, pattern) {
+			var escapedRegEx = "^"+pattern
+				.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1")
+				.replace(/\\\*/g, ".*?")+"$";
+			var rx = new RegExp(escapedRegEx);
+			return rx.test(testString);
 		}
 	});
 )(_);

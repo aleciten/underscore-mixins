@@ -14,4 +14,15 @@ _.chunkize([1,2,3,4,5], 2)
 => [[1,2], [3,4], [5]]
 ```
 
+## String functions ##
+
+**matchesWildcard** _.matchesWildcard(testString, wildcardPattern)
+
+Returns true if testString matches the wildcard pattern 
+
+```javascript
+_.matchesWildcard('http://www.google.com/something', '*.google.com/*')
+=> true
+```
+
 
